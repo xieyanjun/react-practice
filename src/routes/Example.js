@@ -1,7 +1,7 @@
 import react from 'react';
 import Examples from '../Components/Example.js';
 
-const Example = () => {
+const Example = ({location, params}) => {
   return (
     <div>
       <Examples />
