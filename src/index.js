@@ -1,11 +1,12 @@
 import dva, { connect } from 'dva';
 import { Router, Route, browserHistory } from 'dva/router';
-import { ApolloClient, createNetworkInterface, ApolloProvider } from 'react-apollo';
-import fetch from 'dva/fetch';
+/*import { ApolloClient, createNetworkInterface, ApolloProvider } from 'react-apollo';
+import fetch from 'dva/fetch';*/
 import React from 'react';
 import './index.html';
 import styles from './index.less';
 import routes from './routes';
+import key from 'keymaster';
 
 // 实例化 ApolloClient
 /*const client = new ApolloClient({
@@ -19,6 +20,7 @@ const app = dva({
 // 2. Model
 // Remove the comment and define your model.
 //app.model({});
+app.model(require('./models/model'))
 
 /*<Router history={history}>
     <Route path="/" component={HomePage} /> 
