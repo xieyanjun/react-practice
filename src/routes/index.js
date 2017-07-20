@@ -7,8 +7,8 @@ import { compose } from 'recompose';
 
 const Routes = (
   <Router>
-    <Route path="/" component={RoutExample} />
-    <Route path="about" component={Example} />
+    <Route path="/" component={Message} />
+    <Route path="about" component={RoutExample} />
     <Route path="message" component={Message} /> 
     <Route path="message/:id" component={Example} /> 
   </Router>

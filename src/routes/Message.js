@@ -1,12 +1,28 @@
 import react from 'react';
-import Message from '../Components/Message/Message.js';
+import Counter from '../Components/Message/Message.js';
+import { Provider, connect } from 'react-redux';
+import { createStore } from 'redux'
 
-const Messages = () => {
+// Reducer
+function counter(state = { count: 0 }, action) {
+  const count = state.count
+  switch (action.type) {
+    case 'increase':
+      return { count: count + 1 }
+    default:
+      return state
+  }
+}
+// Store
+const store = createStore(counter)
+const Counters = () => {
   return (
     <div>
-      <Message />
+    <Provider  store={store}>
+      <Counter />
+    </Provider>
     </div>
     );
 }
 
-export default Messages;
+export default Counters;
